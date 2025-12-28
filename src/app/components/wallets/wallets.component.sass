@@ -1,0 +1,241 @@
+.container
+  max-width: 1200px
+  margin: 0 auto
+  color: #fff
+  font-family: 'Outfit', sans-serif
+
+.header
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin-bottom: 2rem
+  
+  h1
+    font-size: 2.5rem
+    font-weight: 700
+    background: linear-gradient(135deg, #fff 0%, #aaa 100%)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    margin-bottom: 0.5rem
+
+  p
+    color: rgba(255, 255, 255, 0.6)
+    font-size: 1.1rem
+
+.refresh-btn
+  background: rgba(255, 255, 255, 0.1)
+  border: 1px solid rgba(255, 255, 255, 0.2)
+  width: 50px
+  height: 50px
+  border-radius: 50%
+  color: white
+  cursor: pointer
+  display: flex
+  align-items: center
+  justify-content: center
+  transition: all 0.3s ease
+  
+  &:hover
+    background: rgba(255, 255, 255, 0.2)
+    transform: rotate(180deg)
+  
+  &.loading
+    animation: spin 1s linear infinite
+
+.section-title
+  display: flex
+  align-items: center
+  gap: 1rem
+  margin-bottom: 1.5rem
+  
+  h2
+    font-size: 1.5rem
+    font-weight: 600
+  
+  .badge
+    background: rgba(52, 211, 153, 0.1)
+    color: #34d399
+    padding: 0.25rem 0.75rem
+    border-radius: 20px
+    font-size: 0.8rem
+    border: 1px solid rgba(52, 211, 153, 0.2)
+
+.yields-grid
+  display: grid
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr))
+  gap: 1.5rem
+  margin-bottom: 3rem
+
+.yield-card
+  background: rgba(255, 255, 255, 0.05)
+  backdrop-filter: blur(10px)
+  border: 1px solid rgba(255, 255, 255, 0.1)
+  border-radius: 24px
+  padding: 1.5rem
+  transition: all 0.3s ease
+  position: relative
+  overflow: hidden
+
+  &:hover
+    transform: translateY(-5px)
+    background: rgba(255, 255, 255, 0.08)
+    border-color: rgba(255, 255, 255, 0.2)
+
+  &.highlight
+    border-color: rgba(52, 211, 153, 0.3)
+    &::after
+      content: ''
+      position: absolute
+      top: -50%
+      left: -50%
+      width: 200%
+      height: 200%
+      background: linear-gradient(45deg, transparent, rgba(52, 211, 153, 0.05), transparent)
+      transform: rotate(45deg)
+      animation: shimmer 3s infinite
+
+.card-header
+  display: flex
+  align-items: center
+  gap: 1rem
+  margin-bottom: 1.5rem
+
+  .logo-wrapper
+    width: 48px
+    height: 48px
+    background: #fff
+    border-radius: 12px
+    padding: 4px
+    display: flex
+    align-items: center
+    justify-content: center
+    
+    img
+      max-width: 100%
+      max-height: 100%
+      object-fit: contain
+
+  .name-group
+    h3
+      font-size: 1.2rem
+      font-weight: 600
+      margin-bottom: 0.25rem
+    
+    .tags
+      display: flex
+      gap: 0.5rem
+      
+      .tag
+        font-size: 0.7rem
+        color: rgba(255, 255, 255, 0.5)
+        background: rgba(255, 255, 255, 0.05)
+        padding: 2px 6px
+        border-radius: 4px
+
+.rate-value
+  text-align: center
+  margin: 1rem 0
+
+  .apy
+    display: block
+    font-size: 2.5rem
+    font-weight: 800
+    color: #34d399
+  
+  .label
+    font-size: 0.8rem
+    color: rgba(255, 255, 255, 0.5)
+    text-transform: uppercase
+    letter-spacing: 1px
+
+.card-footer
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin-top: 1rem
+  padding-top: 1rem
+  border-top: 1px solid rgba(255, 255, 255, 0.05)
+  font-size: 0.8rem
+  color: rgba(255, 255, 255, 0.4)
+
+.banks-table-glass
+  background: rgba(255, 255, 255, 0.03)
+  border-radius: 24px
+  border: 1px solid rgba(255, 255, 255, 0.05)
+  overflow: hidden
+
+  .table-header
+    display: flex
+    justify-content: space-between
+    padding: 1rem 2rem
+    background: rgba(255, 255, 255, 0.05)
+    font-weight: 600
+    font-size: 0.9rem
+    color: rgba(255, 255, 255, 0.6)
+
+  .bank-row
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 1rem 2rem
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03)
+    transition: background 0.2s ease
+
+    &:hover
+      background: rgba(255, 255, 255, 0.02)
+    
+    &:last-child
+      border-bottom: none
+
+  .bank-info
+    display: flex
+    align-items: center
+    gap: 1rem
+    
+    img
+      width: 24px
+      height: 24px
+      border-radius: 4px
+  
+  .bank-rate
+    font-weight: 700
+    color: #34d399
+
+.loader-container
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  padding: 4rem
+  
+  .spinner
+    width: 40px
+    height: 40px
+    border: 3px solid rgba(255,255,255,0.1)
+    border-top: 3px solid #34d399
+    border-radius: 50%
+    animation: spin 1s linear infinite
+    margin-bottom: 1rem
+
+@keyframes spin
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(360deg)
+
+@keyframes shimmer
+  0%
+    transform: translateX(-100%) rotate(45deg)
+  100%
+    transform: translateX(100%) rotate(45deg)
+
+.fade-in
+  animation: fadeIn 0.5s ease-out
+
+@keyframes fadeIn
+  from
+    opacity: 0
+    transform: translateY(10)
+  to
+    opacity: 1
+    transform: translateY(0)

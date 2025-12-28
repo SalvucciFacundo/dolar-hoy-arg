@@ -1,0 +1,89 @@
+<div class="container fade-in">
+  <div class="header">
+    <div class="title-group">
+      <h1>Inversiones en Pesos</h1>
+      <p>Rendimientos diarios y Plazo Fijo en Argentina</p>
+    </div>
+    <button (click)="refresh()" class="refresh-btn" [class.loading]="loading()">
+      <span class="icon">🔄</span>
+    </button>
+  </div>
+
+  <!-- Billeteras y Fondos -->
+  <section class="section-yields">
+    <div class="section-title">
+      <h2>Billeteras Virtuales</h2>
+      <span class="badge">Liquidez Inmediata</span>
+    </div>
+
+    @if (loading()) {
+    <div class="loader-container">
+      <div class="spinner"></div>
+      <p>Analizando mercados...</p>
+    </div>
+    } @else if (error()) {
+    <div class="error-card">
+      <p>{{ error() }}</p>
+      <button (click)="refresh()">Reintentar</button>
+    </div>
+    } @else {
+    <div class="yields-grid">
+      @for (item of processedYields(); track item.id) {
+      <div class="yield-card" [class.highlight]="item.apy > 35">
+        <div class="card-header">
+          <div class="logo-wrapper">
+            <img [src]="item.logo || getLogo(item.id)" [alt]="item.nombre" />
+          </div>
+          <div class="name-group">
+            <h3>{{ item.nombre }}</h3>
+            <div class="tags">
+              @for (tag of item.tags; track tag) {
+              <span class="tag">{{ tag }}</span>
+              }
+            </div>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <div class="rate-value">
+            <span class="apy">{{ item.apy | number : '1.2-2' }}%</span>
+            <span class="label">TNA Estimada</span>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <span class="update">{{ (item.fecha | date : 'dd/MM/yyyy') || 'Hoy' }}</span>
+          <span class="currency">{{ item.moneda }}</span>
+        </div>
+      </div>
+      }
+    </div>
+    }
+  </section>
+
+  <!-- Bancos - Plazo Fijo -->
+  <section class="section-banks">
+    <div class="section-title">
+      <h2>Top Bancos (Plazo Fijo)</h2>
+      <span class="badge">30 Días</span>
+    </div>
+
+    <div class="banks-table-glass">
+      <div class="table-header">
+        <span>Banco</span>
+        <span>TNA Clientes</span>
+      </div>
+      @for (bank of filteredPlazosFijos(); track bank.entidad) {
+      <div class="bank-row">
+        <div class="bank-info">
+          <img [src]="bank.logo" alt="" />
+          <span>{{ bank.entidad }}</span>
+        </div>
+        <span class="bank-rate"
+          >{{ (bank.tnaNoClientes || bank.tnaClientes || 0) * 100 | number : '1.1-1' }}%</span
+        >
+      </div>
+      }
+    </div>
+  </section>
+</div>
