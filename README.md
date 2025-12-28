@@ -1,59 +1,61 @@
-# DolarHoy
+# ArgenDolar Dash 🚀
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.3.
+Un dashboard financiero moderno, rápido y elegante para seguir el pulso de la economía argentina en tiempo real. Construido con tecnología de punta y un diseño enfocado en la experiencia de usuario (**Glassmorphism**).
 
-## Development server
+[![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)](https://angular.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![SASS](https://img.shields.io/badge/SASS-hotpink?style=for-the-badge&logo=sass&logoColor=white)](https://sass-lang.com/)
 
-To start a local development server, run:
+## ✨ Características Principales
 
-```bash
-ng serve
-```
+- 💵 **Dólar en Vivo**: Cotizaciones actualizadas al instante (Oficial, Blue, MEP, CCL, Cripto y Tarjeta).
+- 🏦 **Inversiones y Wallet Yields**: Comparativa de rendimientos de billeteras virtuales como **Mercado Pago**, **Naranja X**, **Ualá**, **Personal Pay** y plataformas cripto.
+- 📉 **Tasas de Plazo Fijo**: Top 10 de bancos con las mejores tasas de interés del mercado.
+- 🔄 **Conversor de Divisas**: Herramienta integrada para calcular conversiones entre pesos y los distintos tipos de dólar.
+- 🎨 **Diseño Premium**: Interfaz moderna con efectos de transparencia (Glassmorphism), animaciones fluidas y modo oscuro nativo.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🛠️ Stack Tecnológico
 
-## Code scaffolding
+- **Framework**: Angular 21
+- **Estado**: Angular Signals para una reactividad eficiente y moderna.
+- **Componentes**: Arquitectura basada en Standalone Components.
+- **Estilos**: SASS con diseño responsivo y custom properties.
+- **Iconografía**: Lucide Icons y logos vectorizados de entidades financieras.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 📡 APIs Utilizadas
 
-```bash
-ng generate component component-name
-```
+Este proyecto utiliza datos públicos y confiables de las siguientes fuentes:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- [DolarApi.com](https://dolarapi.com/): Para todas las cotizaciones del dólar y monedas extranjeras.
+- [ArgentinaDatos.com](https://argentinadatos.com/): Para rendimientos de billeteras, FCIs y tasas de plazos fijos bancarios.
 
-```bash
-ng generate --help
-```
+## 🚀 Instalación y Desarrollo
 
-## Building
+1. **Clonar el repositorio**:
 
-To build the project run:
+   ```bash
+   git clone https://github.com/SalvucciFacundo/dolar-hoy-arg.git
+   ```
 
-```bash
-ng build
-```
+2. **Instalar dependencias**:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+   ```bash
+   npm install
+   ```
 
-## Running unit tests
+3. **Correr en modo desarrollo**:
+   ```bash
+   ng serve
+   ```
+   Navega a `http://localhost:4200/`. La aplicación se recargará automáticamente si realizas cambios.
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## 📝 Roadmap
 
-```bash
-ng test
-```
+- [ ] Gráficos históricos de cotizaciones.
+- [ ] Notificaciones de alertas de precio.
+- [ ] Calculadora avanzada de inflación y poder adquisitivo.
+- [ ] Soporte para más monedas (Euro, Real, etc.).
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Diseñado con ❤️ para la comunidad argentina por [Facundo Salvucci](https://github.com/SalvucciFacundo).
